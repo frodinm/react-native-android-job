@@ -1,0 +1,44 @@
+{
+  "name": "react-native-android-job",
+  "version": "0.0.1",
+  "description": "Android library being developed to allow users to create personal alert notifications which run in the background even after the app is killed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged",
+    "document": "documentation readme --readme-file README.md -s \"API\" -g"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frodinm/react-native-android-job.git"
+  },
+  "peerDependencies": {
+    "react-native": ">= 0.36.0"
+  },
+  "keywords": [
+    "react-native",
+    "android-job"
+  ],
+  "author": "Fabrizio Rodin-Miron <fabrizio_1197@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frodinm/react-native-android-job/issues"
+  },
+  "homepage": "https://github.com/frodinm/react-native-android-job#readme",
+  "devDependencies": {
+    "documentation": "^6.3.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.12.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "index.js": [
+      "npm run document",
+      "git add"
+    ]
+  }
+}
