@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "react": "16.3.1",
-    "react-native": "0.55.3"
+    "react-native": "0.55.3",
+    "react-native-android-job": "^0.0.1"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",

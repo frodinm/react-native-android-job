@@ -1,3 +1,5 @@
 rootProject.name = 'example'
+include ':react-native-android-job'
+project(':react-native-android-job').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-android-job/android')
 
 include ':app'
