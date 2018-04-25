@@ -4142,9 +4142,9 @@ react-is@^16.3.1:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.3.2.tgz#f4d3d0e2f5fbb6ac46450641eb2e25bf05d36b22"
 
-react-native-android-job@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-android-job/-/react-native-android-job-0.0.2.tgz#df6a5f347c2795e38ea34ffedf88d7b120407a4c"
+react-native-android-job@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-android-job/-/react-native-android-job-0.0.3.tgz#0cb07727809fa8effbcb43a72156dba04fbcc9c7"
 
 react-native@0.55.3:
   version "0.55.3"

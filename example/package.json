@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "logBack": "adb logcat *:S ReactNativeJS:V rnAndroidJob:V",
     "test": "jest"
   },
   "dependencies": {
     "react": "16.3.1",
     "react-native": "0.55.3",
-    "react-native-android-job": "^0.0.2"
+    "react-native-android-job": "^0.0.3"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",
