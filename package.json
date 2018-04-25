@@ -1,6 +1,6 @@
 {
   "name": "react-native-android-job",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Android library being developed to allow users to create personal alert notifications which run in the background even after the app is killed.",
   "main": "index.js",
   "scripts": {

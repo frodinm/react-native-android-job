@@ -21,16 +21,12 @@ public class AndroidJob extends Job {
         return Result.SUCCESS;
     }
 
-    public static void initializeJobManager(ReactApplicationContext context){
-        Log.d(TAG , context.toString()+ " has initialized");
+    public static void initializeJobManager(ReactApplicationContext context) {
+        Log.d(TAG, context.toString() + " has initialized");
         JobManager.create(context).addJobCreator(new AndroidJobCreator());
     }
 
-
     private void scheduleJob() {
-        new JobRequest.Builder(AndroidJob.TAG)
-                .setExecutionWindow(30_000L, 40_000L)
-                .build()
-                .schedule();
+        new JobRequest.Builder(AndroidJob.TAG).setExecutionWindow(30_000L, 40_000L).build().schedule();
     }
 }
