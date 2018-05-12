@@ -35,7 +35,7 @@ public class RNAndroidJobCreator implements JobCreator {
             Log.d(RNAndroidJob.TAG, "TaskId did not match any of the defined jobs");
         }
         Job temp = jobMap.get(taskId);
-        Log.d(RNAndroidJob.TAG, "Job "+temp+" has been added");
+        Log.d(RNAndroidJob.TAG, "Job "+temp.toString()+" has been added");
     }
 
     @Override
