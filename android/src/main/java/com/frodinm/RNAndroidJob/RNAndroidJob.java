@@ -14,14 +14,13 @@ public abstract class RNAndroidJob extends Job implements LifecycleEventListener
     public static final String TAG = "RNAndroidJob";
     public static boolean isForeground = false;
 
-    public static UpJob getUpJob(){
+    public static UpJob getUpJob() {
         return new UpJob();
     }
 
-    public static DownJob getDownJob(){
+    public static DownJob getDownJob() {
         return new DownJob();
     }
-
 
     public static void initializeJobManager(Context context) {
         Log.d(TAG, context.toString() + " has initialized");
@@ -44,9 +43,9 @@ public abstract class RNAndroidJob extends Job implements LifecycleEventListener
 
     }
 
-    private void setForeground(boolean status){
-        Log.d(RNAndroidJob.TAG, "Setting foreground "+ status);
-        this.isForeground = status;
+    private void setForeground(boolean status) {
+        Log.d(RNAndroidJob.TAG, "Setting foreground " + status);
+        isForeground = status;
     }
 
 }
