@@ -1,6 +1,7 @@
 package com.frodinm.rnandroidjob;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.evernote.android.job.Job;
 
@@ -11,6 +12,7 @@ public class DownJob extends RNAndroidJob {
     @NonNull
     @Override
     protected Result onRunJob(@NonNull Params params) {
-        return null;
+        Log.d(TAG, "Job " +this.toString()+" ran");
+        return Result.SUCCESS;
     }
 }
