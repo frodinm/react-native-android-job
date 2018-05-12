@@ -39,13 +39,7 @@ public abstract class RNAndroidJob extends Job implements LifecycleEventListener
     @Override
     public void onHostPause() {
         setForeground(false);
-
-        Iterator it = RNAndroidJobCreator.jobMap.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
-            Log.d(RNAndroidJob.TAG,pair.getKey() + " = " + pair.getValue());
-            it.remove(); // avoids a ConcurrentModificationException
-        }
+        
     }
 
     @Override
