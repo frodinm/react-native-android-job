@@ -34,13 +34,8 @@ public class RNAndroidJobCreator implements JobCreator {
         }else{
             Log.d(RNAndroidJob.TAG, "TaskId did not match any of the defined jobs");
         }
-
-        Iterator it = jobMap.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
-            Log.d(RNAndroidJob.TAG,pair.getKey() + " = " + pair.getValue());
-            it.remove(); // avoids a ConcurrentModificationException
-        }
+        Job temp = jobMap.get(taskId);
+        Log.d(RNAndroidJob.TAG, "Job "+temp+" has been added");
     }
 
     @Override
