@@ -2,7 +2,7 @@ package com.example;
 
 import android.app.Application;
 
-import com.frodinm.rnandroidjob.AndroidJob;
+import com.frodinm.rnandroidjob.RNAndroidJob;
 import com.facebook.react.ReactApplication;
 import com.frodinm.rnandroidjob.AndroidJobPackage;
 import com.facebook.react.ReactNativeHost;

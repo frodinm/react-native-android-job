@@ -1,4 +1,4 @@
-package com.frodinm.rnandroidjob;
+package com.frodinm.RNAndroidJob;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -9,11 +9,11 @@ import com.facebook.react.uimanager.ViewManager;
 import java.util.Collections;
 import java.util.List;
 
-public class AndroidJobPackage implements ReactPackage {
+public class RNAndroidJobPackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Collections.<NativeModule>singletonList(new AndroidJobModule(reactContext));
+        return Collections.<NativeModule>singletonList(new RNAndroidJobModule(reactContext));
     }
 
     public List<Class<? extends JavaScriptModule>> createJSModules() {

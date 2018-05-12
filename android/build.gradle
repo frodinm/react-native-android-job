@@ -53,6 +53,7 @@ repositories {
 }
 
 dependencies {
+  compile 'com.squareup.okhttp3:okhttp:3.10.0'
   compile 'com.evernote:android-job:1.2.5'   
   compile 'com.facebook.react:react-native:+'
 }
