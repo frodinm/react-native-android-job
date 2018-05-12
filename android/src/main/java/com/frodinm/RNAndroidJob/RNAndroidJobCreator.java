@@ -13,7 +13,7 @@ import java.util.Map;
 
 
 public class RNAndroidJobCreator implements JobCreator {
-    public static HashMap<Task, RNAndroidJob> jobMap = new HashMap<>();
+    public static HashMap<Task, Job> jobMap = new HashMap<>();
 
     public static void addTask(Task taskId) {
         if(taskId != null){
@@ -39,7 +39,7 @@ public class RNAndroidJobCreator implements JobCreator {
     @Override
     public Job create(@NonNull String taskId) {
 
-        RNAndroidJob task = jobMap.get(taskId);
+        Job task =  jobMap.get(taskId);
 
         return task;
     }

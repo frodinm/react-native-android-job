@@ -25,6 +25,7 @@ export default class App extends Component {
     super();
     console.log(RNAndroidJob)
     RNAndroidJob.registerNewTask("up");
+    RNAndroidJob.schedulePeriodicJob();
   }
   render() {
     return (

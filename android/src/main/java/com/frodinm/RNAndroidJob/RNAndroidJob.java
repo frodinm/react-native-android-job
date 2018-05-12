@@ -17,11 +17,11 @@ public abstract class RNAndroidJob extends Job implements LifecycleEventListener
     public static final String TAG = "RNAndroidJob";
     public static boolean isForeground = false;
 
-    public static UpJob getUpJob() {
+    public static Job getUpJob() {
         return new UpJob();
     }
 
-    public static DownJob getDownJob() {
+    public static Job getDownJob() {
         return new DownJob();
     }
 
