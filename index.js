@@ -5,7 +5,8 @@ let RNAndroidJob = NativeModules.RNAndroidJob
 module.exports = {
 
     registerNewTask: function (taskId) {
-        if (typeof taskId === '') {
+        console.log(taskId)
+        if (taskId.constructor === String) {
             RNAndroidJob.registerNewTask(taskId)
         } else {
             console.log('TaskId needs to be a string')

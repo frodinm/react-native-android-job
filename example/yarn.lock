@@ -4155,7 +4155,7 @@ react-is@^16.3.1:
 
 "react-native-android-job@git+https://git@github.com/frodinm/react-native-android-job":
   version "0.0.4"
-  resolved "git+https://git@github.com/frodinm/react-native-android-job#a9959ae37eb05ecfa81fd965b0dc764b2368a8ba"
+  resolved "git+https://git@github.com/frodinm/react-native-android-job#3ac69f45bee72f3b587c595c038e015033acfa76"
 
 react-native@0.55.3:
   version "0.55.3"
