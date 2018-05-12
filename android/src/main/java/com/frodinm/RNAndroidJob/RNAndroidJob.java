@@ -9,6 +9,9 @@ import com.evernote.android.job.JobManager;
 import com.evernote.android.job.JobRequest;
 import com.facebook.react.bridge.LifecycleEventListener;
 
+import java.util.Iterator;
+import java.util.Map;
+
 public abstract class RNAndroidJob extends Job implements LifecycleEventListener {
 
     public static final String TAG = "RNAndroidJob";
@@ -36,6 +39,13 @@ public abstract class RNAndroidJob extends Job implements LifecycleEventListener
     @Override
     public void onHostPause() {
         setForeground(false);
+
+        Iterator it = RNAndroidJobCreator.jobMap.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            Log.d(RNAndroidJob.TAG,pair.getKey() + " = " + pair.getValue());
+            it.remove(); // avoids a ConcurrentModificationException
+        }
     }
 
     @Override

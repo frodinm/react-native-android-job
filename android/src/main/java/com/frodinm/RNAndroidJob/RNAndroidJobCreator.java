@@ -7,6 +7,7 @@ import com.evernote.android.job.Job;
 import com.evernote.android.job.JobCreator;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 
@@ -19,11 +20,11 @@ public class RNAndroidJobCreator implements JobCreator {
             switch (taskId){
                 case up:
                     jobMap.put(taskId, RNAndroidJob.getUpJob() );
-                    Log.d(RNAndroidJob.TAG, "Job with taskID" + taskId + "has been registered");
+                    Log.d(RNAndroidJob.TAG, "Job with taskID " + taskId + " has been registered");
                     break;
                 case down:
                     jobMap.put(taskId,RNAndroidJob.getDownJob());
-                    Log.d(RNAndroidJob.TAG, "Job with taskID" + taskId + "has been registered");
+                    Log.d(RNAndroidJob.TAG, "Job with taskID " + taskId + " has been registered");
                     break;
                 case left:
                     break;
@@ -32,6 +33,13 @@ public class RNAndroidJobCreator implements JobCreator {
             }
         }else{
             Log.d(RNAndroidJob.TAG, "TaskId did not match any of the defined jobs");
+        }
+
+        Iterator it = jobMap.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            Log.d(RNAndroidJob.TAG,pair.getKey() + " = " + pair.getValue());
+            it.remove(); // avoids a ConcurrentModificationException
         }
     }
 

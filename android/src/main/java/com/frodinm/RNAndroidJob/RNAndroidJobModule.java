@@ -36,7 +36,7 @@ class RNAndroidJobModule extends ReactContextBaseJavaModule implements Lifecycle
 
     @ReactMethod
     public void registerNewTask(String taskId) {
-        Log.d(RNAndroidJob.TAG,"TaskId received :"+ taskId);
+        Log.d(RNAndroidJob.TAG,"TaskId received : "+ taskId);
         Task taskToAdd = null;
         switch (taskId){
             case "up":
