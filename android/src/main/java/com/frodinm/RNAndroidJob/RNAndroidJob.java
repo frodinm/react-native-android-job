@@ -39,7 +39,7 @@ public abstract class RNAndroidJob extends Job implements LifecycleEventListener
     @Override
     public void onHostPause() {
         setForeground(false);
-        
+
     }
 
     @Override

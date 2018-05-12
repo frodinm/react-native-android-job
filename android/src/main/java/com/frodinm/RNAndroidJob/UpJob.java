@@ -9,6 +9,9 @@ public class UpJob extends RNAndroidJob{
 
     public static final String TAG = "RNAndroidJobUpJob";
 
+    public UpJob(){
+        return;
+    }
 
     @NonNull
     @Override
