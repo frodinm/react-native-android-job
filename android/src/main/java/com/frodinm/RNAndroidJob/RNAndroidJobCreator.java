@@ -1,4 +1,4 @@
-package com.frodinm.RNAndroidJob;
+package com.frodinm.rnandroidjob;
 
 import android.support.annotation.NonNull;
 import android.util.Log;

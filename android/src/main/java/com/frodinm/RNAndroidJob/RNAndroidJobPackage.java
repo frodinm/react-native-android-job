@@ -1,4 +1,4 @@
-package com.frodinm.RNAndroidJob;
+package com.frodinm.rnandroidjob;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

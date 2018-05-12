@@ -1,4 +1,4 @@
-package com.frodinm.RNAndroidJob;
+package com.frodinm.rnandroidjob;
 
 public enum Task {
     up("up"), down("down"), left("left"), right("right");
