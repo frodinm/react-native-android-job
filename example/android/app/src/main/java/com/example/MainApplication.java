@@ -2,9 +2,9 @@ package com.example;
 
 import android.app.Application;
 
-import com.frodinm.rnandroidjob.RNAndroidJob;
+import com.frodinm.RNAndroidJob.RNAndroidJob;
 import com.facebook.react.ReactApplication;
-import com.frodinm.rnandroidjob.AndroidJobPackage;
+import com.frodinm.RNAndroidJob.RNAndroidJobPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -23,7 +23,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new MainReactPackage(), new AndroidJobPackage());
+      return Arrays.<ReactPackage>asList(new MainReactPackage(), new RNAndroidJobPackage());
     }
 
     @Override
@@ -41,6 +41,6 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
-    AndroidJob.initializeJobManager(this);
+    RNAndroidJob.initializeJobManager(this);
   }
 }
