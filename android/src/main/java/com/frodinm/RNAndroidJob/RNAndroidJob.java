@@ -1,6 +1,7 @@
 package com.frodinm.rnandroidjob;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
@@ -17,11 +18,17 @@ public abstract class RNAndroidJob extends Job implements LifecycleEventListener
     public static final String TAG = "RNAndroidJob";
     public static boolean isForeground = false;
 
+    public static SQLiteDatabase readableDatabase = null;
 
 
     public static void initializeJobManager(Context context) {
         Log.d(TAG, context.toString() + " has initialized");
         JobManager.create(context).addJobCreator(new RNAndroidJobCreator());
+    }
+
+    public static void linkRNdatabase(SQLiteDatabase db){
+        readableDatabase = db;
+        Log.d(TAG, db.toString());
     }
 
     @Override

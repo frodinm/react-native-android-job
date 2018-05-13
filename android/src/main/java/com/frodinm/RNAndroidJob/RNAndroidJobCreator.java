@@ -1,5 +1,6 @@
 package com.frodinm.rnandroidjob;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.util.Log;
 

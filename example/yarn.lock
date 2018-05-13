@@ -4155,7 +4155,7 @@ react-is@^16.3.1:
 
 "react-native-android-job@git+https://git@github.com/frodinm/react-native-android-job":
   version "0.0.4"
-  resolved "git+https://git@github.com/frodinm/react-native-android-job#bc39c3f08e00b69b19586f0aaa1afd09199d9d56"
+  resolved "git+https://git@github.com/frodinm/react-native-android-job#16d647570e0b9cae6c51a2735dbd23c4bb27cf29"
 
 react-native@0.55.3:
   version "0.55.3"
@@ -4699,8 +4699,8 @@ source-map-support@^0.4.15, source-map-support@^0.4.2:
     source-map "^0.5.6"
 
 source-map-support@^0.5.0:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.5.tgz#0d4af9e00493e855402e8ec36ebed2d266fceb90"
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.6.tgz#4435cee46b1aab62b8e8610ce60f788091c51c13"
   dependencies:
     buffer-from "^1.0.0"
     source-map "^0.6.0"

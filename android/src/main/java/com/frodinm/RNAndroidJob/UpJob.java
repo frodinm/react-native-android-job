@@ -16,7 +16,8 @@ public class UpJob extends RNAndroidJob{
     @NonNull
     @Override
     protected Result onRunJob(@NonNull Params params) {
-        Log.d(TAG, "Job " +this.toString()+" ran");
+        Log.d(TAG, "Job " +this.toString()+" is running");
+
         return Result.SUCCESS;
     }
 }
