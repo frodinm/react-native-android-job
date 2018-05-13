@@ -36,26 +36,25 @@ class RNAndroidJobModule extends ReactContextBaseJavaModule implements Lifecycle
 
     @ReactMethod
     public void registerNewTask(String taskId) {
-        Log.d(RNAndroidJob.TAG,"TaskId received : "+ taskId);
+        Log.d(RNAndroidJob.TAG, "TaskId received : " + taskId);
 
-        switch (taskId){
-            case "up":
-                RNAndroidJobCreator.addTask("up");
-                break;
-            case "down":
-                RNAndroidJobCreator.addTask("down");
-                break;
-            default:
-                Log.d(RNAndroidJob.TAG,"None of the tags matched");
+        switch (taskId) {
+        case "up":
+            RNAndroidJobCreator.addTask("up");
+            break;
+        case "down":
+            RNAndroidJobCreator.addTask("down");
+            break;
+        default:
+            Log.d(RNAndroidJob.TAG, "None of the tags matched");
 
         }
-
 
     }
 
     @ReactMethod
     public void scheduleExactJob(String taskId) {
-        Log.d(RNAndroidJob.TAG,"Job with ID "+ taskId +" will be scheduled");
+        Log.d(RNAndroidJob.TAG, "Job with ID " + taskId + " will be scheduled");
         int jobId = new JobRequest.Builder(taskId).setExact(20_000L).build().schedule();
     }
 
@@ -69,15 +68,17 @@ class RNAndroidJobModule extends ReactContextBaseJavaModule implements Lifecycle
             Log.w(RNAndroidJob.TAG, "Found " + jobRequests.size() + " scheduled jobs");
         }
 
-        // Hook into lifecycle events so we can tell when the application is foregrounded
+        // Hook into lifecycle events so we can tell when the application is
+        // foregrounded
         ReactApplicationContext context = getReactApplicationContext();
         context.addLifecycleEventListener(this);
     }
 
     @ReactMethod
     public void schedulePeriodicJob(String taskId) {
-        Log.d(RNAndroidJob.TAG,"Job with ID "+ taskId +" will be scheduled");
-         new JobRequest.Builder(taskId).setExecutionWindow(30_000L, 40_000L).setPeriodic(30_000L).build().schedule();
+        Log.d(RNAndroidJob.TAG, "Job with ID " + taskId + " will be scheduled");
+        new JobRequest.Builder(taskId).setExecutionWindow(30_000L, 40_000L)
+                .setPeriodic(TimeUnit.MINUTES.toMillis(15), TimeUnit.MINUTES.toMillis(5)).build().schedule();
     }
 
     @ReactMethod
@@ -117,8 +118,8 @@ class RNAndroidJobModule extends ReactContextBaseJavaModule implements Lifecycle
 
     }
 
-    private void setForeground(boolean status){
-        Log.d(RNAndroidJob.TAG, "Setting foreground "+ status);
+    private void setForeground(boolean status) {
+        Log.d(RNAndroidJob.TAG, "Setting foreground " + status);
         this.isForeground = status;
     }
 }
