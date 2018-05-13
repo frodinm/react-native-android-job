@@ -1,8 +1,10 @@
 package com.example;
 
 import android.app.Application;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.facebook.react.ReactApplication;
+import com.facebook.react.modules.storage.ReactDatabaseSupplier;
 import com.frodinm.rnandroidjob.RNAndroidJob;
 import com.frodinm.rnandroidjob.RNAndroidJobPackage;
 import com.facebook.react.ReactNativeHost;
@@ -37,6 +39,14 @@ public class MainApplication extends Application implements ReactApplication {
     return mReactNativeHost;
   }
 
+  public SQLiteDatabase linkDatabase(){
+      SQLiteDatabase readableDatabase;
+
+      readableDatabase = ReactDatabaseSupplier.getInstance(this.getApplicationContext()).getReadableDatabase();
+
+      return readableDatabase;
+  }
+
 
 
   @Override
@@ -44,5 +54,6 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     RNAndroidJob.initializeJobManager(this);
+    RNAndroidJob.linkRNdatabase(linkDatabase());
   }
 }
