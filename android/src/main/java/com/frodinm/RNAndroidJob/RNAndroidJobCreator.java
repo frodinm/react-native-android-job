@@ -13,12 +13,12 @@ import java.util.Map;
 
 
 public class RNAndroidJobCreator implements JobCreator {
-    public static HashMap<Task, Task> jobMap = new HashMap<>();
+    public static HashMap<TaskDescription, Task> jobMap = new HashMap<>();
 
-    public static void addTask(Task taskId) {
+    public static void addTask(TaskDescription taskId) {
 
         if(taskId != null){
-            switch (taskId.getTaskDesc()){
+            switch (taskId){
                 case up:
                     jobMap.put(taskId, new Task(){
                         @Override

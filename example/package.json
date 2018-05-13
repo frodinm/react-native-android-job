@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "logBack": "adb logcat *:S ReactNativeJS:V RNAndroidJob:V",
+    "reset": "adb reverse tcp:8081 tcp:8081",
     "force": "adb shell cmd jobscheduler run -f com.example 999",
     "test": "jest"
   },
