@@ -40,10 +40,10 @@ class RNAndroidJobModule extends ReactContextBaseJavaModule implements Lifecycle
         Task taskToAdd = null;
         switch (taskId){
             case "up":
-                taskToAdd = Task.up;
+                taskToAdd.setTaskDesc(TaskDescription.up);
                 break;
             case "down":
-                taskToAdd = Task.down;
+                taskToAdd.setTaskDesc(TaskDescription.down);
                 break;
             default:
                 Log.d(RNAndroidJob.TAG,"None of the tags matched");
@@ -75,7 +75,7 @@ class RNAndroidJobModule extends ReactContextBaseJavaModule implements Lifecycle
 
     @ReactMethod
     public void schedulePeriodicJob() {
-         new JobRequest.Builder(Task.up.toString()).setExecutionWindow(30_000L, 40_000L).build().schedule();
+         new JobRequest.Builder(TaskDescription.up.toString()).setExecutionWindow(30_000L, 40_000L).build().schedule();
     }
 
     @ReactMethod

@@ -13,17 +13,28 @@ import java.util.Map;
 
 
 public class RNAndroidJobCreator implements JobCreator {
-    public static HashMap<Task, Job> jobMap = new HashMap<>();
+    public static HashMap<Task, Task> jobMap = new HashMap<>();
 
     public static void addTask(Task taskId) {
+
         if(taskId != null){
-            switch (taskId){
+            switch (taskId.getTaskDesc()){
                 case up:
-                    jobMap.put(taskId, RNAndroidJob.getUpJob() );
+                    jobMap.put(taskId, new Task(){
+                        @Override
+                        public Job taskToReturn() {
+                            return new UpJob();
+                        }
+                    } );
                     Log.d(RNAndroidJob.TAG, "Job with taskID " + taskId + " has been registered");
                     break;
                 case down:
-                    jobMap.put(taskId,RNAndroidJob.getDownJob());
+                    jobMap.put(taskId, new Task(){
+                        @Override
+                        public Job taskToReturn() {
+                            return new DownJob();
+                        }
+                    } );
                     Log.d(RNAndroidJob.TAG, "Job with taskID " + taskId + " has been registered");
                     break;
                 case left:
@@ -39,7 +50,7 @@ public class RNAndroidJobCreator implements JobCreator {
     @Override
     public Job create(@NonNull String taskId) {
 
-        Job task =  jobMap.get(taskId);
+        Job task =  jobMap.get(taskId).taskToReturn();
 
         return task;
     }
