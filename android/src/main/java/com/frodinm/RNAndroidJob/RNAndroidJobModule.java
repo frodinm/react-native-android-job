@@ -54,8 +54,9 @@ class RNAndroidJobModule extends ReactContextBaseJavaModule implements Lifecycle
     }
 
     @ReactMethod
-    public void scheduleExactJob() {
-        int jobId = new JobRequest.Builder(TaskDescription.up.toString()).setExact(20_000L).build().schedule();
+    public void scheduleExactJob(String taskId) {
+        Log.d(RNAndroidJob.TAG,"Job with ID "+ taskId +" will be scheduled");
+        int jobId = new JobRequest.Builder(taskId).setExact(20_000L).build().schedule();
     }
 
     @Override

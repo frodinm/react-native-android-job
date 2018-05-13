@@ -12,8 +12,8 @@ module.exports = {
             console.log('TaskId needs to be a string')
         }
     },
-    schedulePeriodicJob: function () {
-        RNAndroidJob.schedulePeriodicJob()
+    schedulePeriodicJob: function (taskId) {
+        RNAndroidJob.schedulePeriodicJob(taskId)
     }
 
 
