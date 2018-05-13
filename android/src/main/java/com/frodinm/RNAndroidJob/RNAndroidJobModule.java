@@ -77,8 +77,8 @@ class RNAndroidJobModule extends ReactContextBaseJavaModule implements Lifecycle
     @ReactMethod
     public void schedulePeriodicJob(String taskId) {
         Log.d(RNAndroidJob.TAG, "Job with ID " + taskId + " will be scheduled");
-        new JobRequest.Builder(taskId).setExecutionWindow(30_000L, 40_000L)
-                .setPeriodic(TimeUnit.MINUTES.toMillis(15), TimeUnit.MINUTES.toMillis(5)).build().schedule();
+        new JobRequest.Builder(taskId).setPeriodic(TimeUnit.MINUTES.toMillis(15), TimeUnit.MINUTES.toMillis(5)).build()
+                .schedule();
     }
 
     @ReactMethod

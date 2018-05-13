@@ -12,9 +12,21 @@ module.exports = {
             console.log('TaskId needs to be a string')
         }
     },
+    scheduleExactJob: function (taskId) {
+        RNAndroidJob.scheduleExactJob(taskId)
+    },
     schedulePeriodicJob: function (taskId) {
         RNAndroidJob.schedulePeriodicJob(taskId)
-    }
+    },
+    scheduleAdvancedJob: function () {
+        RNAndroidJob.scheduleAdvancedJob()
+    },
+    runJobImmediately: function () {
+        RNAndroidJob.runJobImmediately()
+    },
+
+
+
 
 
 }
