@@ -40,10 +40,10 @@ class RNAndroidJobModule extends ReactContextBaseJavaModule implements Lifecycle
 
         switch (taskId){
             case "up":
-                RNAndroidJobCreator.addTask(TaskDescription.up);
+                RNAndroidJobCreator.addTask("up");
                 break;
             case "down":
-                RNAndroidJobCreator.addTask(TaskDescription.down);
+                RNAndroidJobCreator.addTask("down");
                 break;
             default:
                 Log.d(RNAndroidJob.TAG,"None of the tags matched");

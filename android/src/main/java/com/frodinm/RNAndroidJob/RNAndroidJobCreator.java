@@ -13,13 +13,13 @@ import java.util.Map;
 
 
 public class RNAndroidJobCreator implements JobCreator {
-    public static HashMap<TaskDescription, Task> jobMap = new HashMap<>();
+    public static HashMap<String, Task> jobMap = new HashMap<>();
 
-    public static void addTask(TaskDescription taskId) {
+    public static void addTask(String taskId) {
 
         if(taskId != null){
             switch (taskId){
-                case up:
+                case "up":
                     jobMap.put(taskId, new Task(){
                         @Override
                         public Job taskToReturn() {
@@ -28,7 +28,7 @@ public class RNAndroidJobCreator implements JobCreator {
                     } );
                     Log.d(RNAndroidJob.TAG, "Job with taskID " + taskId + " has been registered");
                     break;
-                case down:
+                case "down":
                     jobMap.put(taskId, new Task(){
                         @Override
                         public Job taskToReturn() {
@@ -37,9 +37,9 @@ public class RNAndroidJobCreator implements JobCreator {
                     } );
                     Log.d(RNAndroidJob.TAG, "Job with taskID " + taskId + " has been registered");
                     break;
-                case left:
+                case "left":
                     break;
-                case right:
+                case "right":
                     break;
             }
         }else{
@@ -50,8 +50,6 @@ public class RNAndroidJobCreator implements JobCreator {
     @Override
     public Job create(@NonNull String taskId) {
 
-        Job task =  jobMap.get(taskId).taskToReturn();
-
-        return task;
+        return jobMap.get(taskId).taskToReturn();
     }
 }
