@@ -29,6 +29,8 @@ public abstract class RNAndroidJob extends Job implements LifecycleEventListener
     public static void linkRNdatabase(SQLiteDatabase db){
         readableDatabase = db;
         Log.d(TAG, db.toString());
+        SQLHelper.createTable();
+        Log.d(TAG, "Created table USER_TASKS");
     }
 
     @Override
